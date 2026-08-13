@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>یک راز</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #ffe1ec, #e6ddff);
+      font-family: Tahoma, sans-serif;
+      color: #4b2340;
+    }
+    .card {
+      width: min(90%, 420px);
+      padding: 42px 24px;
+      text-align: center;
+      background: rgba(255, 255, 255, .9);
+      border-radius: 24px;
+      box-shadow: 0 14px 40px rgba(94, 45, 90, .18);
+    }
+    h1 { margin: 0 0 28px; font-size: 25px; }
+    button {
+      border: 0;
+      border-radius: 12px;
+      padding: 12px 28px;
+      margin: 5px;
+      font: inherit;
+      cursor: pointer;
+    }
+    #yes, #close { background: #e84d8a; color: #fff; }
+    #no { background: #eee; color: #777; cursor: not-allowed; opacity: .72; }
+    .smile { font-size: 76px; }
+    .heart { font-size: 82px; animation: beat .8s infinite alternate; }
+    @keyframes beat { to { transform: scale(1.12); } }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <section class="card" id="question">
+    <h1>می‌خوای یه راز بدونی؟</h1>
+    <button id="yes">بله</button>
+    <button id="no" type="button" disabled aria-disabled="true">خیر</button>
+  </section>
+
+  <section class="card" id="answer" hidden>
+    <div id="smile" class="smile">😊</div>
+    <div id="message" hidden>
+      <h1>آزاده خیلی دوستت داره</h1>
+      <div class="heart">💖</div>
+      <button id="close" type="button">بازگشت به EMPY</button>
+    </div>
+  </section>
+
+  <script>
+    const question = document.getElementById('question');
+    const answer = document.getElementById('answer');
+    const smile = document.getElementById('smile');
+    const message = document.getElementById('message');
+
+    document.getElementById('yes').addEventListener('click', () => {
+      question.hidden = true;
+      answer.hidden = false;
+      setTimeout(() => {
+        smile.hidden = true;
+        message.hidden = false;
+      }, 900);
+    });
+
+    document.getElementById('close').addEventListener('click', () => {
+      window.location.href = 'https://empy.ir/';
+    });
+  </script>
+</body>
+</html>
