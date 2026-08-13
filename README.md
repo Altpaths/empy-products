@@ -4,7 +4,8 @@ Standalone products from EMPY, organized for simple direct downloads.
 
 ## Downloads
 
-- [Surprise](downloads/surprise.zip) — a small standalone interactive experience.
+- [Download Surprise](downloads/surprise.zip) — the standalone product package.
+- [Run Surprise online](products/surprise/index.html) — open the product directly.
 
 ## Product source
 
